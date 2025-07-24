@@ -29,14 +29,6 @@ export default function Faq() {
       ),
     },
     {
-      title: "Is the chat end-to-end encrypted?",
-      content: (
-        <div className="text-muted-foreground">
-          No, WiChain uses a lightweight obfuscation method (SHA3-512 XOR) for basic LAN confidentiality. While it&apos;s not strong encryption, it prevents plain-text sniffing on the network.
-        </div>
-      ),
-    },
-    {
       title: "Can I chat in groups?",
       content: (
         <div className="text-muted-foreground">
