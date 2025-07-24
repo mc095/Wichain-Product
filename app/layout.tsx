@@ -15,8 +15,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "SaaS Landing Template",
-  description: "Landing Page template.",
+  title: "WiChain",
+  description: "WiChain - Decentralized Chat Application",
 };
 
 export default function RootLayout({
