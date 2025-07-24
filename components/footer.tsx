@@ -16,7 +16,7 @@ const Footer = () => {
           variant="light"
           size="sm"
         >
-          LinkedIn
+         My LinkedIn
         </Button>
 
         <Button
@@ -26,7 +26,7 @@ const Footer = () => {
           variant="light"
           size="sm"
         >
-          me 🍃
+          Know more about me 🍃
         </Button>
       </div>
     </footer>
