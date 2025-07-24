@@ -43,7 +43,7 @@ export default function Hero() {
           className="flex flex-col justify-center items-center space-y-5 max-w-4xl mx-auto text-center"
         >
           <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
-            Local. Secure. Decentralized
+            Local. Secure. Decentralized.
           </span>
           <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-100 to-foreground dark:to-foreground bg-clip-text text-transparent">
             WiChain - A Trust-First Chat Platform for Local Networks

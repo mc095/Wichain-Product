@@ -56,7 +56,7 @@ export default function Faq() {
       title: "Is WiChain open source?",
       content: (
         <div className="text-muted-foreground">
-          Yes! WiChain is fully open-source and available on GitHub. It&apos;s built for learning and experimentation with decentralized systems and blockchain concepts.
+          Yes! WiChain is fully open-source and available on GitHub. Give it a star today 🌟. It&apos;s built for learning and experimentation with decentralized systems and blockchain concepts.
         </div>
       ),
     },
