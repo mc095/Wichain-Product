@@ -27,7 +27,7 @@ export default function Hero() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-  
+
     // 2. Open the modal to show the prompt
     onOpen();
   };
@@ -60,16 +60,16 @@ export default function Hero() {
             <Button
               onPress={() => handleDownload(windowsDownloadPath, 'wichain_0.1.0_x64_en-US.msi')}
               color="primary"
-              variant="shadow"
+              variant="shadow" // Both buttons now use "shadow" variant
             >
               Download WiChain for Windows x64
             </Button>
             <Button
               onPress={() => handleDownload(macDownloadPath, 'wichain_0.1.0_aarch64.dmg')}
               color="primary"
-              variant="bordered" // Changed variant for visual distinction
+              variant="shadow" // Both buttons now use "shadow" variant
             >
-              Download WiChain for macOS (Apple Silicon)
+              Download WiChain for macOS
             </Button>
 
             <Modal
