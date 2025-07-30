@@ -15,17 +15,19 @@ import { useDisclosure } from "@heroui/use-disclosure";
 export default function Hero() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
-  const softwareDownloadPath = "/software/wichain_0.1.0_x64_en-US.msi"; // Path to your MSI file
+  const windowsDownloadPath = "/software/wichain_0.1.0_x64_en-US.msi"; // Path to your MSI file
+  const macDownloadPath = "/software/wichain_0.1.0_aarch64.dmg"; // Path to your DMG file
 
-  const handleDownloadAndPrompt = () => {
+
+  const handleDownload = (path: string, filename: string) => {
     // 1. Initiate the download programmatically
     const link = document.createElement('a');
-    link.href = softwareDownloadPath;
-    link.download = 'wichain_0.1.0_x64_en-US.msi'; // Optional: specify the download filename
+    link.href = path;
+    link.download = filename; // Specify the download filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
+  
     // 2. Open the modal to show the prompt
     onOpen();
   };
@@ -55,8 +57,19 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             className="items-center justify-center gap-x-3 space-y-3 sm:flex sm:space-y-0"
           >
-            <Button onPress={handleDownloadAndPrompt} color="primary" variant="shadow">
-              Download WiChain for Windowsx64
+            <Button
+              onPress={() => handleDownload(windowsDownloadPath, 'wichain_0.1.0_x64_en-US.msi')}
+              color="primary"
+              variant="shadow"
+            >
+              Download WiChain for Windows x64
+            </Button>
+            <Button
+              onPress={() => handleDownload(macDownloadPath, 'wichain_0.1.0_aarch64.dmg')}
+              color="primary"
+              variant="bordered" // Changed variant for visual distinction
+            >
+              Download WiChain for macOS (Apple Silicon)
             </Button>
 
             <Modal
@@ -96,20 +109,20 @@ export default function Hero() {
         </div>
       </motion.div>
       {/* Demo GIF with curved edges */}
-<motion.div
-  initial={{ opacity: 0, y: 30 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="mt-12 w-full max-w-3xl mx-auto px-4"
->
-  <div className="overflow-hidden rounded-xl border border-border shadow-xl">
-    <img
-      src="/demo-gif.gif"
-      alt="WiChain Product Demo"
-      className="w-full h-auto object-cover"
-    />
-  </div>
-</motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-12 w-full max-w-3xl mx-auto px-4"
+      >
+        <div className="overflow-hidden rounded-xl border border-border shadow-xl">
+          <img
+            src="/demo-gif.gif"
+            alt="WiChain Product Demo"
+            className="w-full h-auto object-cover"
+          />
+        </div>
+      </motion.div>
     </div>
   );
 }
