@@ -4,28 +4,25 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  NavbarMenuToggle,
 } from "@heroui/navbar";
 import ThemeSwitcher from "@/components/theme-switcher";
 
 export default function NavBar() {
   return (
     <Navbar isBlurred maxWidth="xl">
-      <NavbarContent className="sm:hidden" justify="start">
-        <NavbarMenuToggle />
-      </NavbarContent>
-
+      {/* Centered brand for small screens */}
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
           <a
             href="/"
-            className="font-light tracking-tighter text-inherit text-lg"
+            className="font-light tracking-tighter text-lg text-inherit"
           >
             WiChain
           </a>
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Brand for larger screens */}
       <NavbarContent className="hidden sm:flex gap-8" justify="center">
         <NavbarBrand>
           <a
@@ -37,6 +34,7 @@ export default function NavBar() {
         </NavbarBrand>
       </NavbarContent>
 
+      {/* Right-side items */}
       <NavbarContent justify="end" className="gap-4">
         <NavbarItem>
           <a
