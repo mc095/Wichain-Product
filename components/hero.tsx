@@ -13,7 +13,8 @@ import { useDisclosure } from "@heroui/use-disclosure";
 
 
 export default function Hero() {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { isOpen: isDownloadOpen, onOpen: onDownloadOpen, onOpenChange: onDownloadOpenChange } = useDisclosure();
+  const { isOpen: isVideoOpen, onOpen: onVideoOpen, onOpenChange: onVideoOpenChange } = useDisclosure();
 
   const windowsDownloadPath = "/software/wichain_0.1.0_x64_en-US.msi"; // Path to your MSI file
   const macDownloadPath = "/software/wichain_0.1.0_aarch64.dmg"; // Path to your DMG file
@@ -29,7 +30,7 @@ export default function Hero() {
     document.body.removeChild(link);
 
     // 2. Open the modal to show the prompt
-    onOpen();
+    onDownloadOpen();
   };
 
   return (
@@ -73,9 +74,9 @@ export default function Hero() {
             </Button>
 
             <Modal
-              isOpen={isOpen}
+              isOpen={isDownloadOpen}
               placement="center"
-              onOpenChange={onOpenChange}
+              onOpenChange={onDownloadOpenChange}
             >
               <ModalContent>
                 {/* Applied the same classes from the <h1> to the ModalHeader */}
@@ -89,7 +90,7 @@ export default function Hero() {
                   </p>
                 </ModalBody>
                 <ModalFooter className="flex justify-center">
-                  <Button color="primary" variant="solid" onPress={onOpenChange}>
+                  <Button color="primary" variant="solid" onPress={onDownloadOpenChange}>
                     Got It!
                   </Button>
                 </ModalFooter>
@@ -115,13 +116,40 @@ export default function Hero() {
         transition={{ duration: 0.8, delay: 0.4 }}
         className="mt-12 w-full max-w-3xl mx-auto px-4"
       >
-        <div className="overflow-hidden rounded-xl border border-border shadow-xl">
-          <img
-            src="/demo-gif.gif"
-            alt="WiChain Product Demo"
+        <div className="relative overflow-hidden rounded-xl border border-border shadow-xl cursor-pointer group" onClick={onVideoOpen}>
+          <video
+            src="/Linkedin.mp4"
+            loop
+            muted
+            playsInline
             className="w-full h-auto object-cover"
           />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
+            <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-white/90 text-primary group-hover:scale-110 transition-transform">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8 md:w-10 md:h-10 ml-1">
+                <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
+              </svg>
+            </div>
+          </div>
         </div>
+
+        <Modal
+          isOpen={isVideoOpen}
+          placement="center"
+          onOpenChange={onVideoOpenChange}
+          size="full"
+        >
+          <ModalContent>
+            <ModalBody className="p-0 flex items-center justify-center bg-black min-h-screen">
+              <video
+                src="/Linkedin.mp4"
+                controls
+                autoPlay
+                className="w-full h-auto max-h-screen"
+              />
+            </ModalBody>
+          </ModalContent>
+        </Modal>
       </motion.div>
     </div>
   );

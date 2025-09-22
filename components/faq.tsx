@@ -5,10 +5,42 @@ import { motion } from "framer-motion";
 export default function Faq() {
   const accordionItems = [
     {
-      title: "What is WiChain?",
+      title: "What is WiChain and how does it work?",
       content: (
         <div className="text-muted-foreground">
-          WiChain is a decentralized LAN chat application that uses blockchain technology to ensure tamper-evident message history. It works without the internet, using peer-to-peer UDP messaging over a local network.
+          WiChain is a decentralized LAN chat platform that uses advanced peer discovery and secure communication protocols. It utilizes mDNS for automatic peer discovery, UDP for initial connection requests, and TCP for establishing reliable connections between peers.
+        </div>
+      ),
+    },
+    {
+      title: "How secure is WiChain's encryption?",
+      content: (
+        <div className="text-muted-foreground">
+          WiChain implements military-grade security with AES-256-GCM encryption for messages and ED25519 (the same signing algorithm used in Tor) for digital signatures. This ensures maximum security and privacy for all communications within your local network.
+        </div>
+      ),
+    },
+    {
+      title: "What features does WiChain support?",
+      content: (
+        <div className="text-muted-foreground">
+          WiChain supports rich multimedia messaging including images and photos, group chat creation, and secure file sharing. The UI is built with Framer Motion and Hero UI for a smooth, modern user experience. All communications are end-to-end encrypted and locally stored.
+        </div>
+      ),
+    },
+    {
+      title: "How does peer discovery work?",
+      content: (
+        <div className="text-muted-foreground">
+          WiChain uses mDNS (Multicast DNS) for automatic peer discovery on your local network. When a peer is found, it initiates a UDP-based connection request, followed by a secure TCP handshake for establishing a reliable, encrypted connection.
+        </div>
+      ),
+    },
+    {
+      title: "Can I create and manage group chats?",
+      content: (
+        <div className="text-muted-foreground">
+          Yes! WiChain fully supports group chat functionality. You can create secure groups for team collaboration, and all group communications are protected with the same military-grade encryption used in one-on-one chats.
         </div>
       ),
     },
@@ -16,39 +48,7 @@ export default function Faq() {
       title: "Do I need internet to use WiChain?",
       content: (
         <div className="text-muted-foreground">
-          No. WiChain is designed specifically for local area networks (LANs). All communication happens directly between peers, without relying on any external server or internet access.
-        </div>
-      ),
-    },
-    {
-      title: "How is the chat history stored?",
-      content: (
-        <div className="text-muted-foreground">
-          Each device maintains a local, append-only blockchain to store chat history. Every message is signed and added to the chain, making it verifiable and tamper-evident.
-        </div>
-      ),
-    },
-    {
-      title: "Can I chat in groups?",
-      content: (
-        <div className="text-muted-foreground">
-          Yes, WiChain supports ephemeral group chats. Group IDs are generated deterministically based on the public keys of members, allowing for secure, temporary group messaging.
-        </div>
-      ),
-    },
-    {
-      title: "How do I get started?",
-      content: (
-        <div className="text-muted-foreground">
-          You can download the latest release and run it on two or more devices connected to the same LAN. No server setup is needed. For developers, clone the repo and follow the instructions in the README to build it from source.
-        </div>
-      ),
-    },
-    {
-      title: "Is WiChain open source?",
-      content: (
-        <div className="text-muted-foreground">
-          Yes! WiChain is fully open-source and available on GitHub. Give it a star today 🌟. It&apos;s built for learning and experimentation with decentralized systems and blockchain concepts.
+          No. WiChain is designed specifically for local area networks (LANs). All communication happens directly between peers using local network protocols, without relying on any external server or internet access.
         </div>
       ),
     },
@@ -72,6 +72,7 @@ export default function Faq() {
         <p className="max-w-xl text-muted-foreground text-center">
           Everything you need to know about WiChain and how it works.
         </p>
+       
       </div>
       <div className="flex w-full max-w-lg">
         <Accordion
