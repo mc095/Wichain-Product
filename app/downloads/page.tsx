@@ -7,9 +7,9 @@ export default function DownloadsPage() {
             style={{ backgroundImage: 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)' }}
         >
             <div className="w-full max-w-4xl mx-auto px-4 py-20">
-                <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl py-2 text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-600 to-foreground dark:to-foreground bg-clip-text text-transparent">Downloads</h1>
+                <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl py-2 text-pretty bg-gradient-to-b from-sky-200 dark:from-sky-700 to-foreground dark:to-foreground bg-clip-text text-transparent">Downloads</h1>
 
-                <p className="mb-6 text-lg text-muted-foreground text-gray-800">
+                <p className="mb-6 text-lg text-muted-foreground text-gray-600">
                     WiChain is a trust-first, peer-to-peer chat platform for local networks. It prioritizes
                     privacy and operates without centralized servers.
                 </p>
@@ -39,7 +39,7 @@ export default function DownloadsPage() {
                         </svg>
                         <div>
                             <div className="font-medium">Windows</div>
-                            <div className="text-sm text-muted-foreground">Installer for Windows x64</div>
+                            <div className="text-sm text-muted-foreground text-slate-400">Installer for Windows x64</div>
                         </div>
                     </a>
 
@@ -56,7 +56,7 @@ export default function DownloadsPage() {
                         </svg>
                         <div>
                             <div className="font-medium">macOS</div>
-                            <div className="text-sm text-muted-foreground">Apple Silicon DMG</div>
+                            <div className="text-sm text-muted-foreground text-slate-400">Apple Silicon DMG</div>
                         </div>
                     </a>
 
@@ -87,7 +87,7 @@ export default function DownloadsPage() {
                         </svg>
                         <div>
                             <div className="font-medium text-black">Docker</div>
-                            <div className="text-sm text-muted-foreground">Portable AppImage for x86_64</div>
+                            <div className="text-sm text-muted-foreground text-slate-400">Portable AppImage for x86_64</div>
                         </div>
                     </a>
 
@@ -923,8 +923,8 @@ export default function DownloadsPage() {
                             </g>
                         </svg>
                         <div>
-                            <div className="font-medium text-b">Linux</div>
-                            <div className="text-sm text-muted-foreground">Debian package</div>
+                            <div className="font-medium text-black">Linux</div>
+                            <div className="text-sm text-muted-foreground text-slate-400">Debian package</div>
                         </div>
                     </a>
                 </div>
