@@ -2,18 +2,13 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from "@heroui/button";
 import { motion } from "framer-motion";
-import { Modal, ModalContent, ModalBody } from "@heroui/modal";
 import { useDisclosure } from "@heroui/use-disclosure";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Hero() {
   const router = useRouter();
-  const {
-    isOpen: isVideoOpen,
-    onOpen: onVideoOpen,
-    onOpenChange: onVideoOpenChange,
-  } = useDisclosure();
+  const { } = useDisclosure();
 
   const goToDownloads = () => {
     router.push("/downloads");
@@ -22,12 +17,12 @@ export default function Hero() {
   return (
     <div className="relative justify-center items-center">
       {/* HERO SECTION */}
-      <section className="max-w-screen-xl mx-auto px-4 py-28 md:py-36 flex flex-col justify-center items-center gap-12 md:px-8">
+      <section className="max-w-screen-xl mx-auto px-4 py-24 md:py-28 flex flex-col justify-center items-center gap-10 md:px-8">
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, type: "spring", bounce: 0 }}
-          className="flex flex-col justify-center items-center space-y-6 max-w-4xl mx-auto text-center"
+          className="flex flex-col justify-center items-center space-y-5 max-w-4xl mx-auto text-center"
         >
           <span className="w-fit h-full text-sm bg-card px-2 py-1 border border-border rounded-full">
             Local. Secure. Decentralized.
@@ -43,7 +38,7 @@ export default function Hero() {
 
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-6"
+            className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-4"
           >
             <Button onPress={goToDownloads} color="primary" variant="shadow">
               Downloads
@@ -59,8 +54,8 @@ export default function Hero() {
       </section>
 
       {/* ABOUT SECTION */}
-      <section id="about" className="max-w-4xl mx-auto px-4 py-28 md:py-36 space-y-12">
-        <div className="space-y-6 text-center md:text-left">
+      <section id="about" className="max-w-4xl mx-auto px-4 py-20 md:py-32 space-y-10">
+        <div className="space-y-5 text-center md:text-left">
           <h2 className="text-4xl sm:text-6xl lg:text-[80px] font-reenie bg-gradient-to-b from-foreground to-foreground text-transparent bg-clip-text">
             WiChain
           </h2>
@@ -69,7 +64,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-8">
           <p className="text-xl text-muted-foreground leading-relaxed">
             WiChain provides secure, serverless messaging for devices on the same local network. Devices discover each other automatically, exchange signed messages, and retain a tamper-evident local history — all without external servers or cloud storage.
           </p>
@@ -97,50 +92,16 @@ export default function Hero() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-24 md:mt-36 w-full max-w-3xl mx-auto px-4 pb-24"
+        className="mt-20 md:mt-28 w-full max-w-5xl mx-auto px-4 pb-20"
       >
-        <div
-          className="relative overflow-hidden rounded-xl border border-border shadow-xl cursor-pointer group"
-          onClick={onVideoOpen}
-        >
-          <video
-            src="/Linkedin.mp4"
-            loop
-            muted
-            playsInline
-            className="w-full h-auto object-cover"
+        <div className="relative rounded-xl border border-border shadow-xl overflow-hidden" style={{ paddingBottom: "65%" }}>
+          <iframe
+            src="https://www.loom.com/embed/502ba90724c940c8b303b2e0779c7409"
+            frameBorder="0"
+            allowFullScreen
+            className="absolute top-0 left-0 w-full h-full"
           />
-          <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
-            <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center rounded-full bg-white/90 text-primary group-hover:scale-110 transition-transform">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="w-8 h-8 md:w-10 md:h-10 ml-1"
-              >
-                <path d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347c-.75.412-1.667-.13-1.667-.986V5.653Z" />
-              </svg>
-            </div>
-          </div>
         </div>
-
-        <Modal
-          isOpen={isVideoOpen}
-          placement="center"
-          onOpenChange={onVideoOpenChange}
-          size="full"
-        >
-          <ModalContent>
-            <ModalBody className="p-0 flex items-center justify-center bg-black min-h-screen">
-              <video
-                src="/Linkedin.mp4"
-                controls
-                autoPlay
-                className="w-full h-auto max-h-screen"
-              />
-            </ModalBody>
-          </ModalContent>
-        </Modal>
       </motion.section>
     </div>
   );

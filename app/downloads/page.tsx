@@ -7,7 +7,7 @@ export default function DownloadsPage() {
             style={{ backgroundImage: 'linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%)' }}
         >
             <div className="w-full max-w-4xl mx-auto px-4 py-20">
-                <h1 className="text-4xl font-semibold mb-4 text-center text-black">Downloads</h1>
+                <h1 className="text-4xl font-medium tracking-tighter mx-auto md:text-6xl py-2 text-pretty bg-gradient-to-b from-sky-800 dark:from-sky-600 to-foreground dark:to-foreground bg-clip-text text-transparent">Downloads</h1>
 
                 <p className="mb-6 text-lg text-muted-foreground text-gray-800">
                     WiChain is a trust-first, peer-to-peer chat platform for local networks. It prioritizes
