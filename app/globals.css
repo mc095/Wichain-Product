@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 body {
   @apply bg-background text-foreground border-border;
@@ -24,5 +28,10 @@ body {
     --light:#016FEE;
     --card: #1c1c1c;
     --border: #202020;
+  }
+
+  /* Handwritten display font used for the "About wichain" heading */
+  .font-reenie {
+    font-family: 'Reenie Beanie', cursive;
   }
 }
