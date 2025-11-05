@@ -33,7 +33,7 @@ export default function Hero() {
           </h1>
 
           <p className="max-w-2xl text-lg mx-auto text-muted-foreground text-balance leading-relaxed">
-            WiChain is a peer-to-peer, LAN-first chat app with tamper-evident message history — private by design, no servers required.
+            WiChain is a peer-to-peer, LAN-first chat app with tamper-evident message history - private by design, no servers required.
           </p>
 
           <motion.div
@@ -55,21 +55,24 @@ export default function Hero() {
 
       {/* ABOUT SECTION */}
       <section id="about" className="max-w-4xl mx-auto px-4 py-20 md:py-32 space-y-10">
-        <div className="space-y-5 text-center md:text-left">
-          <h2 className="text-4xl sm:text-6xl lg:text-[80px] font-reenie bg-gradient-to-b from-foreground to-foreground text-transparent bg-clip-text">
+        <div className="space-y-5 md:text-left">
+          <h2 className="text-6xl sm:text-6xl lg:text-[80px] font-reenie bg-gradient-to-b from-foreground to-foreground text-transparent bg-clip-text">
             WiChain
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            A lightweight, privacy-first LAN chat that keeps signed, append-only history locally. Open-source on GitHub.
-          </p>
         </div>
 
+        
+
         <div className="space-y-8">
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            WiChain provides secure, serverless messaging for devices on the same local network. Devices discover each other automatically, exchange signed messages, and retain a tamper-evident local history — all without external servers or cloud storage.
+          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
+            A lightweight, privacy-first LAN chat that keeps signed, append-only history locally.
           </p>
 
-          <p className="text-xl text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
+            WiChain provides secure, serverless messaging for devices on the same local network. Devices discover each other automatically, exchange signed messages, and retain a tamper-evident local history - all without external servers or cloud storage.
+          </p>
+
+          <p className="text-lg text-muted-foreground text-balance leading-relaxed">
             Built with a Rust/Tauri backend and a modern web frontend, WiChain uses UDP-based peer discovery and direct peer-to-peer messaging so conversations remain within your LAN. Messages are signed with Ed25519 for authenticity and appended to a local, append-only ledger for auditability. This makes WiChain lightweight, resilient, and ideal for classrooms, small teams, and privacy-conscious environments where keeping data local is key.
           </p>
         </div>
